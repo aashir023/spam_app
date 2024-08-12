@@ -10,10 +10,9 @@ import string
 # Initialize the PorterStemmer
 ps = PorterStemmer()
 
-# Load the pre-trained 
-tfidf = pickle.load(open(r'C:\Users\Aashir\Desktop\Apps\spamapp\vectorizer.pkl', 'rb'))
-model = pickle.load(open(r'C:\Users\Aashir\Desktop\Apps\spamapp\model.pkl', 'rb'))
-
+# Load the pre-trained TF-IDF vectorizer and model
+tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 
 # Title of the app
 st.title('Email/SMS Spam Detection')
@@ -66,5 +65,3 @@ if st.button('Predict'):
         st.header('SPAM')
     else:
         st.header('NOT SPAM')
-
-
